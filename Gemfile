@@ -16,6 +16,8 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec'
   gem 'shoulda-matchers'
+  gem 'devise', '~> 2.1.2'
+  gem 'twitter-bootstrap-rails'
 end
 
 group :production do
