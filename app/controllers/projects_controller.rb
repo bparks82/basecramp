@@ -22,6 +22,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @list = List.new
   end
 
   def edit

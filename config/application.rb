@@ -58,5 +58,11 @@ module Basecramp
 
     config.assets.initialize_on_precompile = false
     #Devise set "If you are deploying Rails 3.1 on Heroku, you may want to set:"
+    
+    config.generators do |g|
+      g.test_framework      :rspec, :fixture => true
+      g.fixture_replacement :fabrication
+    end
+    #for Fabricate from Socrates
   end
 end
