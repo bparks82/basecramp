@@ -8,7 +8,12 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo = Todo.find(params[:todo])
+    @todo = Todo.new(params[:todo])
+    if @todo.save
+      redirect_to project_path(@todo.list.project)
+    else
+      render project_path(@project)
+    end
   end
 
   def show

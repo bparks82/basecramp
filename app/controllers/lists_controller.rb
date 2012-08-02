@@ -10,6 +10,7 @@ class ListsController < ApplicationController
     @project = Project.find(@list.project.id)
     if @list.save
       redirect_to project_path(@project)
+      # render "projects/show"
     else
       render 'new'
     end
@@ -28,5 +29,6 @@ class ListsController < ApplicationController
   end
 
   def show
+
   end
 end
