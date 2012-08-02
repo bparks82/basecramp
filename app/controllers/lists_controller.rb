@@ -9,7 +9,7 @@ class ListsController < ApplicationController
     @list.project_id = params[:project_id]
     @project = Project.find(@list.project.id)
     if @list.save
-      redirect_to project_list_path(@project, @list)
+      redirect_to project_path(@project)
     else
       render 'new'
     end

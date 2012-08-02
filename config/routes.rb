@@ -4,6 +4,8 @@ Basecramp::Application.routes.draw do
     resources :lists
   end
 
+  resources :todos
+
   devise_for :users
 
   root :to => 'projects#index'

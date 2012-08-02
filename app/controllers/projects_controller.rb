@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @list = List.new
+    @todo = Todo.new
   end
 
   def edit

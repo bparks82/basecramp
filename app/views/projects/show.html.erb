@@ -2,8 +2,12 @@
 
 <h2>Lists</h2>
 <% @project.lists.each do |list| %>
-  <%=link_to list.title, project_list_path(@project, list)%>
-  <% end %>
+  <%=link_to list.title, project_list_path(@project, list)%><br>
 
+  <%= render :partial => "todos/todo" %>
+  <%= render :partial => "todos/add_todo" %>
+
+  <% end %>
+<br>
 
   <%= render :partial => "/lists/list" %>
