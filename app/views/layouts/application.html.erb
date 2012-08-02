@@ -7,9 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 
+<div class="navbar">
+  <div class="navbar-inner">
+      <div class="container">
+<h1>Basecramp Projects</h1>
+    </div>
+  </div>
+</div>
+
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+<p><div id="account">
+  <% if current_user %>
+    <span>Welcome, <%= current_user.email %></span>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to "Sign in", new_user_session_path %>
+  <% end %>
+</div></p>
+
 <body>
 
 <%= yield %>
