@@ -1,5 +1,5 @@
 Fabricator(:user) do
-  email { sequence{|i|"#{Faker::Internet.email} (#{i})"}}
-  password {"password"}
-  password_confirmation {"password"}
+  email { Faker::Internet.email }
+  password "password"
+  password_confirmation "password"
 end
