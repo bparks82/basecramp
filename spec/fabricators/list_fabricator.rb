@@ -1,4 +1,4 @@
 Fabricator(:list) do
-  title      "MyString"
-  project_id 1
+  title { sequence{|i|"#{Faker::Lorem.sentence} (#{i})"}}
+  project!
 end

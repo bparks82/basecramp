@@ -1,5 +1,5 @@
 Fabricator(:todo) do
-  name     "MyString"
-  list_id  1
-  due_date "2012-08-02 12:06:19"
+  name { sequence{|i|"#{Faker::Lorem.sentence} (#{i})"}}
+  due_date {Faker::Date.date}
+  list!
 end
