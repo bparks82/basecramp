@@ -9,10 +9,14 @@ class TodosController < ApplicationController
 
   def create
     @todo = Todo.new(params[:todo])
-    if @todo.save
-      redirect_to project_path(@todo.list.project)
-    else
-      render project_path(@project)
+    respond_to do |format|
+      if @todo.save
+        format.html { redirect_to project_path(@todo.list.project) }
+        format.js
+      else
+        format.html { render :action => "new" }
+        format.js
+      end
     end
   end
 

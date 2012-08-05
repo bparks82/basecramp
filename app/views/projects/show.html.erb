@@ -1,13 +1,6 @@
 <h1><%=@project.name%></h1>
 
-<h2>Lists</h2>
-<% @project.lists.each do |list| %>
-  <h3><%=link_to list.title, project_list_path(@project, list)%></h3><br>
-
-  <%= render :partial => "todos/todo", :locals => {:list => list} %>
-  <%= render :partial => "todos/add_todo", :locals => {:list => list} %>
-
-  <% end %>
+ <%= render :partial => "lists/todo_list_show" %>
 <br>
 
   <%= render :partial => "/lists/list" %>

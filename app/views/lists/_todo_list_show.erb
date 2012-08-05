@@ -1,0 +1,11 @@
+<div id="list">
+<h2>Lists</h2>
+<!-- warn "@projects"
+warn @projects.inspect -->
+<% @project.lists.each do |list| %>
+  <h3><%=link_to list.title, project_list_path(@project, list)%></h3><br>
+
+  <%= render :partial => "todos/todo", :locals => {:list => list} %>
+  <%= render :partial => "todos/add_todo", :locals => {:list => list} %>
+
+  <% end %></div>

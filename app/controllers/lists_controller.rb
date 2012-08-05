@@ -8,11 +8,15 @@ class ListsController < ApplicationController
     @list = List.new(params[:list])
     @list.project_id = params[:project_id]
     @project = Project.find(@list.project.id)
-    if @list.save
-      redirect_to project_path(@project)
-      # render "projects/show"
-    else
-      render 'new'
+    @todo = Todo.new
+    respond_to do |format|
+      if @list.save
+        format.html { redirect_to project_path(@project) }
+        format.js
+      else
+        format.html { render :action => "new" }
+        format.js
+      end
     end
   end
 
